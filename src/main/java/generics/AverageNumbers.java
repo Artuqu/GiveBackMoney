@@ -20,4 +20,8 @@ public class AverageNumbers<T extends Number> {
         return average / numbers.length;
     }
 
+    boolean compareAverage(AverageNumbers<?> secondObject) {
+        return getAverage() == secondObject.getAverage();
+    }
+
 }

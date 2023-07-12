@@ -18,5 +18,8 @@ public class AverageDemo {
         doubleAverageNumbers.getType();
         System.out.println("Average value for d is " + d);
 
+        System.out.println();
+        System.out.println(intNumbers.compareAverage(doubleAverageNumbers));
+
     }
 }
