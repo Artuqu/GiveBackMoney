@@ -7,6 +7,7 @@ public class ConstructorRefDemo {
         MyFunc myClassCons = MyClass::new;
 
         MyClass mc = myClassCons.func(100);
+        myClassCons.func(200);
 
         System.out.println("Saved value is " + mc.getValue());
     }
