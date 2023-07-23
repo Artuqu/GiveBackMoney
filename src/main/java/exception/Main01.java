@@ -1,7 +1,10 @@
 package exception;
 
-public class Main01 {
+import javax.swing.text.TabSet;
+import java.util.*;
 
+public class Main01 {
+    public int a = 0;
 
     public static void main(String[] args) {
 
@@ -13,10 +16,16 @@ public class Main01 {
             result = a / b;
             System.out.println(result);
         } catch (ArithmeticException e) {
-           throw new RuntimeException();
+            throw new RuntimeException();
         } finally {
             System.out.println("This you will see always");
         }
+
+        Object o = new Main01();
+
+        Main01 main01 = new Main01();
+        SortedSet<Integer> list = new TreeSet<>();
+
 
     }
 }

@@ -1,5 +1,7 @@
 package lambda;
 
+import java.lang.module.ModuleFinder;
+
 public class MyClass {
 
     private int value;
@@ -15,4 +17,5 @@ public class MyClass {
     public int getValue() {
         return value;
     }
+
 }
