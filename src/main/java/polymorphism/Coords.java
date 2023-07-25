@@ -22,6 +22,7 @@ public class Coords<T extends TwoD> {
         }
     }
 
+//    static void showAll(Coords<? super FourD> c) { restriction to base class only
     static void showAll(Coords<? extends FourD> c) {
         System.out.println("Coordinate of X Y Z T:");
         for (int i = 0; i < c.cords.length; i++) {
