@@ -7,14 +7,15 @@ public class TreeMapDemo {
 
     public static void main(String[] args) {
 
-        Map<Integer, Integer> integerMap = new TreeMap<>();
-        integerMap.put(4, 304);
-        integerMap.put(2, 809);
-        integerMap.put(1, 34);
-        integerMap.put(3, 556);
+        Map<String, Double> treeMap = new TreeMap<>();
+
+        treeMap.put("Wallace D. Wattles", 8526.94);
+        treeMap.put("Ralph Waldo Emerson", 9502.06);
+        treeMap.put("John Smith", 3566.44);
+        treeMap.put("Edgar Alan Poe", 5699.02);
 
 
-        for (Map.Entry<Integer, Integer> map : integerMap.entrySet()) {
+        for (Map.Entry<String, Double> map : treeMap.entrySet()) {
             System.out.println("Key: " + map.getKey() + ", Value: " + map.getValue());
         }
     }

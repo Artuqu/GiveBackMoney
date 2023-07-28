@@ -2,6 +2,7 @@ package collections.map;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 public class HashMapDemo {
 
@@ -11,9 +12,12 @@ public class HashMapDemo {
         Map<Integer, String> firstMap = new HashMap<>();
         Map<Integer, String> secondtMap = new HashMap<>();
         firstMap.put(1, "Apple");
+        firstMap.put(116, "Apple");
         firstMap.put(2, "Orange");
         firstMap.put(3, "Pineapple");
+        firstMap.put(33, "Pineapple");
         firstMap.put(4, "Grapes");
+        firstMap.put(0, "Grapes");
 
         System.out.println(firstMap.size());
 
@@ -38,6 +42,9 @@ public class HashMapDemo {
             }
         }
 
-
+        for (Map.Entry<Integer,String> entry : firstMap.entrySet()){
+            System.out.print("First map key: " + entry.getKey() + ", ");
+            System.out.println("First map value: " + entry.getValue());
+        }
     }
 }
