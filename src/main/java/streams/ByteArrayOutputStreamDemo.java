@@ -25,7 +25,7 @@ public class ByteArrayOutputStreamDemo {
         for (byte value : b) System.out.print((char) value);
         System.out.println("\nAnd comes to  constructor of OutputStream()");
 
-        try (FileOutputStream f = new FileOutputStream("test.txt")) {
+        try (FileOutputStream f = new FileOutputStream("../RestMoney/src/main/java/streams/test.txt")) {
             bos.writeTo(f);
         } catch (IOException e) {
             System.out.println("IO Error: " + e);
