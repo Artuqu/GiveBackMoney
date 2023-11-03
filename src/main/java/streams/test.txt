@@ -1,0 +1,1 @@
+This string has to be in the arrayB
