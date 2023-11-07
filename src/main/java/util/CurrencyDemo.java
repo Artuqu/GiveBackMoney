@@ -5,7 +5,6 @@ import java.util.Locale;
 
 public class CurrencyDemo {
 
-
     private static Currency instance;
     private static String displayName;
 

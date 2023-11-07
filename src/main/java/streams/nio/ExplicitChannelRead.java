@@ -5,24 +5,14 @@ import java.nio.ByteBuffer;
 import java.nio.channels.SeekableByteChannel;
 import java.nio.file.Files;
 import java.nio.file.InvalidPathException;
-import java.nio.file.Path;
 import java.nio.file.Paths;
 
 public class ExplicitChannelRead {
     public static void main(String[] args) {
         int count;
-        Path filePath = null;
 
-        try {
-            filePath = Paths.get("/home/artur/Dokumenty/GitHub/RestMoney/src/main/java/streams/file1.txt");
-        } catch (InvalidPathException e) {
-            System.out.println("Path's error " + e);
-            return;
-        }
-
-        try (SeekableByteChannel fChan = Files.newByteChannel(filePath)) {
+        try (SeekableByteChannel fChan = Files.newByteChannel(Paths.get("/home/artur/Dokumenty/GitHub/RestMoney/src/main/java/streams/file1.txt"))) {
             ByteBuffer mBuf = ByteBuffer.allocate(128);
-
             do {
                 count = fChan.read(mBuf);
 
@@ -37,6 +27,8 @@ public class ExplicitChannelRead {
             System.out.println();
         } catch (IOException e) {
             System.out.println("IO error" + e);
+        } catch (InvalidPathException e) {
+            System.out.println("Path's error " + e);
         }
     }
 }

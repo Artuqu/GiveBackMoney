@@ -11,7 +11,9 @@ public class FirstList<E> {
         Integer listInt[] = {1, 2, 5, 6, 7, 3, 4};
         Set list1 = new HashSet<>(List.of(listInt));
         HashSet<Integer> hashSet = new HashSet<>(list1);
-        List<Integer> integerList = new ArrayList(List.of(listInt));
+        List<Integer> integerList = new ArrayList<>(List.of(listInt));
+        System.out.println("Max for int list " + Collections.max(integerList));
+
         Collections.min(hashSet);
         SortedSet<Integer> sortedSet = new ConcurrentSkipListSet<>(Set.of(listInt));
 

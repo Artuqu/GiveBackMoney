@@ -1,5 +1,8 @@
 package polymorphism;
 
+import java.lang.reflect.Constructor;
+import java.util.Arrays;
+
 public class Coords<T extends TwoD> {
 
     T[] cords;
@@ -22,7 +25,7 @@ public class Coords<T extends TwoD> {
         }
     }
 
-//    static void showAll(Coords<? super FourD> c) { restriction to base class only
+    //    static void showAll(Coords<? super FourD> c) { restriction to base class only
     static void showAll(Coords<? extends FourD> c) {
         System.out.println("Coordinate of X Y Z T:");
         for (int i = 0; i < c.cords.length; i++) {
@@ -48,6 +51,12 @@ public class Coords<T extends TwoD> {
         fourDCoords.showXY(fourDCoords);
         showXYZ(fourDCoords);
         showAll(fourDCoords);
+
+        Class<?> classObj = FourD.class;
+
+        System.out.println(classObj.getSuperclass().getSuperclass().getSuperclass());
+        Constructor<?>[] constructors = classObj.getConstructors();
+        System.out.println(Arrays.toString(constructors));
 
 
     }
