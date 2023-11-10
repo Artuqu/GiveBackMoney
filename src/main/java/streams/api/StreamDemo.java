@@ -15,18 +15,18 @@ public class StreamDemo {
 
         System.out.println("Beginning list: " + list);
 
-        Stream<Integer> stream = list.stream();
+        Stream<Integer> myStream = list.stream();
 
-        Optional<Integer> minVal = stream.min(Integer::compare);
-        minVal.ifPresent(integer -> System.out.println("Min value: " + integer));
+        Optional<Integer> minVal = myStream.min(Integer::compare);
+        minVal.ifPresent(i -> System.out.println("Min value: " + i));
 
-        stream = list.stream();
+        myStream = list.stream();
 
-        Optional<Integer> maxValue = stream.max(Integer::compare);
+        Optional<Integer> maxValue = myStream.max(Integer::compare);
         maxValue.ifPresent(i -> System.out.println("Max value: " + i));
 
         Stream<Integer> sorted = list.stream().sorted();
-        System.out.print("Sorted stream: ");
+        System.out.print("Sorted myStream: ");
 //        sorted.forEach(n -> System.out.print(n + " "));
         sorted.forEach(list2::add);
         System.out.print(list2);
@@ -38,5 +38,21 @@ public class StreamDemo {
         oddValues = list.stream().filter(n -> n % 2 == 1).filter(n -> n > 5);
         System.out.print("\nOdd values higher than five: ");
         oddValues.forEach(n -> System.out.print(n + " "));
+
+        myStream = list.stream();
+        Integer reduceResult = myStream.reduce(1, (a, b) -> {
+            if (b % 2 == 0) return a * b;
+            else return a;
+        });
+        System.out.println();
+        System.out.println("Sum of even values: " + reduceResult);
+
+        double parallel = list.parallelStream().reduce(1.0, (a, b) -> a * Math.sqrt(b), (a, b) -> a * b);
+        System.out.println("Result of square: " + parallel);
+
+//        map version
+        Stream<Double> root = list.stream().map(Math::sqrt);
+        double sqrtRoot = root.reduce(1.0, (a, b) -> a * b);
+        System.out.println("Sequence with map version: " + sqrtRoot);
     }
 }
