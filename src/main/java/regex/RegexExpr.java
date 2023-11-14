@@ -12,5 +12,13 @@ public class RegexExpr {
         while (matcher.find()) {
             System.out.println("The word was found by index: " + matcher.start() + ", and ends with index: " + (matcher.end() - 1));
         }
+
+        pattern = Pattern.compile("[ ,.?!]");
+        String word = "one two,tree.bird?cat!fish";
+
+        String[] singleWords = pattern.split(word);
+        for (String s : singleWords) {
+            System.out.println(s);
+        }
     }
 }
