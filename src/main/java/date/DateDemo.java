@@ -33,8 +33,8 @@ public class DateDemo {
         LocalDateTime localSet = LocalDateTime.of(2023, 3, 23, 20, 59);
 
         LocalDateTime ldtMinus = ldt.minusMinutes(32);
-        System.out.println(ldt.format(DateTimeFormatter.ofPattern("MMMM d ',' yyyy hh':'mm a" )));
-        System.out.println(ldtMinus.format(DateTimeFormatter.ofPattern("MMMM d ',' yyyy HH':'mm a" )));
+        System.out.println(ldt.format(DateTimeFormatter.ofPattern("MMMM d',' yyyy hh':'mm a" )));
+        System.out.println(ldtMinus.format(DateTimeFormatter.ofPattern("MMMM d',' yyyy HH':'mm a" )));
         System.out.println(localSet.format(DateTimeFormatter.ofLocalizedDateTime(FormatStyle.MEDIUM)));
 
     }
